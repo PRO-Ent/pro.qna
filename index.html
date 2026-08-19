@@ -1216,6 +1216,104 @@ body.scrolled .brand .btext{display:none}
   color:var(--ink);resize:vertical}
 .hlbox textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-soft)}
 .hlprev{align-self:center;font-size:13px;color:var(--ink-2)}
+/* ══ 양식함 ══════════════════════════════════════ */
+.navlink{padding:8px 12px;border-radius:var(--r-sm);font-size:14px;color:var(--ink-2);
+  text-decoration:none;font-weight:500;transition:background .15s,color .15s;
+  display:inline-flex;align-items:center;min-height:40px}
+.navlink:hover{background:var(--surface-2);color:var(--ink)}
+.dw-forms{display:block;margin:12px 4px 0;padding:12px;border-radius:var(--r-sm);
+  background:var(--surface-2);border:1px solid var(--line);text-decoration:none;
+  font-size:14px;font-weight:600;color:var(--ink);text-align:center;min-height:44px}
+.fmwrap{max-width:820px;margin:0 auto;padding:26px 0 40px}
+.fmhero{margin:0 0 20px}
+.fmhero h1{margin:0 0 6px;font-size:24px;font-weight:700;letter-spacing:-.022em}
+.fmhero p{margin:0 0 14px;font-size:14px;color:var(--ink-2)}
+.fmsearch{position:relative}
+.fmsearch .sicon{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--ink-3);pointer-events:none;display:grid}
+.fmsearch input{width:100%;height:48px;padding:0 16px 0 46px;font:inherit;font-size:15px;
+  border:1px solid var(--line-2);border-radius:var(--r-lg);background:var(--surface);color:var(--ink);outline:none}
+.fmsearch input:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-soft)}
+.fmcats{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0}
+.fmchip{border:1px solid var(--line-2);background:var(--surface);color:var(--ink-2);
+  font:inherit;font-size:13px;font-weight:500;min-height:38px;padding:0 14px;border-radius:999px;cursor:pointer}
+.fmchip:hover{border-color:var(--blue-line);color:var(--ink)}
+.fmchip.on{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:600}
+@media (prefers-color-scheme:dark){.fmchip.on{background:var(--blue-soft);border-color:var(--blue-line);color:var(--blue)}}
+.fmlist{display:flex;flex-direction:column;gap:10px}
+.fmrow{position:relative;display:flex;align-items:center;gap:14px;padding:14px 16px;
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh)}
+.fmrow:hover{border-color:var(--blue-line)}
+.fmic{flex:0 0 auto;width:44px;height:44px;display:grid;place-items:center;border-radius:12px;
+  background:var(--surface-2);color:var(--ink-3)}
+.fmic.k-pdf{background:var(--p-rose);color:var(--p-rose-i)}
+.fmic.k-img{background:var(--p-sky);color:var(--p-sky-i)}
+.fmic.k-hwp{background:var(--p-peri);color:var(--p-peri-i)}
+.fmic.k-xls{background:var(--p-mint);color:var(--p-mint-i)}
+.fmic.k-doc{background:var(--p-sky);color:var(--p-sky-i)}
+.fmtx{flex:1 1 auto;min-width:0}
+.fmname{font-size:15px;font-weight:600;color:var(--ink);letter-spacing:-.015em}
+.fmdesc{margin-top:2px;font-size:13.5px;color:var(--ink-2);line-height:1.5}
+.fmmeta{margin-top:5px;display:flex;flex-wrap:wrap;gap:8px;font-size:12.5px;color:var(--meta)}
+.fmcat{padding:1px 8px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line);color:var(--ink-3);font-weight:600}
+.fmact{flex:0 0 auto;display:flex;gap:6px}
+.fmact .btn-o,.fmact .btn-b{min-height:38px;padding:0 14px;font-size:13.5px;white-space:nowrap}
+.fmbar{position:absolute;left:16px;right:16px;bottom:7px;display:flex;align-items:center;gap:9px}
+.fmbar[hidden]{display:none}
+.fmbar i{display:block;height:4px;border-radius:99px;background:var(--blue);width:0;transition:width .25s}
+.fmbar::before{content:"";position:absolute;left:0;right:78px;height:4px;border-radius:99px;background:var(--line)}
+.fmbar i{position:relative;z-index:1;max-width:calc(100% - 78px)}
+.fmbar span{margin-left:auto;font-size:11.5px;color:var(--ink-3);white-space:nowrap}
+@media(max-width:640px){
+  .fmwrap{padding:18px 0 32px}
+  .fmrow{flex-wrap:wrap;gap:10px 12px;padding:14px}
+  .fmact{width:100%;justify-content:flex-end}
+  .fmbar{position:static;margin-top:2px;width:100%}
+  .fmbar::before{display:none}
+  .fmbar i{background:var(--blue-line);height:5px}
+}
+#fmfile{width:100%;padding:12px;font:inherit;font-size:14px;border:1px dashed var(--line-2);
+  border-radius:var(--r-sm);background:var(--surface-2);color:var(--ink-2);cursor:pointer;min-height:52px}
+#fmfile:hover{border-color:var(--blue-line);background:var(--blue-soft)}
+#fmfile::file-selector-button{font:inherit;font-size:13.5px;font-weight:600;margin-right:12px;
+  padding:8px 14px;min-height:38px;border:1px solid var(--line-2);border-radius:9px;
+  background:var(--surface);color:var(--ink);cursor:pointer}
+#fmfile::file-selector-button:hover{border-color:var(--blue);color:var(--blue)}
+.fmup{position:relative;display:flex;align-items:center;gap:10px;margin:4px 0 14px;
+  padding:10px 12px;border-radius:var(--r-sm);background:var(--surface-2);border:1px solid var(--line)}
+.fmup[hidden]{display:none}
+.fmup i{display:block;height:6px;border-radius:99px;background:var(--blue);width:0;
+  transition:width .3s;flex:0 0 auto;min-width:6px}
+.fmup span{margin-left:auto;font-size:12.5px;color:var(--ink-2);white-space:nowrap}
+.fmfound .sec-hd{align-items:baseline}
+.fmall{margin-left:auto;display:inline-flex;align-items:center;gap:5px;font-size:13.5px;
+  font-weight:600;color:var(--blue);text-decoration:none;white-space:nowrap;min-height:36px}
+.fmall:hover{text-decoration:underline}
+.fmfoot{margin:26px 0 0;padding:22px;border-radius:var(--r-lg);background:var(--surface-2);
+  border:1px solid var(--line);text-align:center}
+.fmfoot h3{margin:0 0 6px;font-size:16px;font-weight:700}
+.fmfoot p{margin:0 0 14px;font-size:13.5px;color:var(--ink-2)}
+.fmfbtn{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.fmfbtn .btn-b{text-decoration:none}
+/* 파일 보기 창 */
+.fv-ov{position:fixed;inset:0;z-index:95;background:rgba(10,13,20,.62);
+  display:flex;align-items:center;justify-content:center;padding:20px;
+  opacity:0;transition:opacity .16s}
+.fv-ov.on{opacity:1}
+.fv-ov[hidden]{display:none}
+.fv-bx{width:min(980px,100%);height:min(88vh,900px);display:flex;flex-direction:column;
+  background:var(--surface);border-radius:var(--r-lg);overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.fv-hd{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--line);background:var(--surface-2)}
+.fv-tt{flex:1 1 auto;min-width:0}
+.fv-tt b{display:block;font-size:15px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fv-tt span{display:block;font-size:12.5px;color:var(--ink-3)}
+.fv-hd .btn-b{min-height:38px;padding:0 14px;font-size:13.5px}
+.fv-bd{flex:1 1 auto;min-height:0;background:var(--surface-2);display:grid;place-items:center;overflow:auto}
+.fv-bd iframe{width:100%;height:100%;border:0;background:#fff}
+.fv-bd img{max-width:100%;max-height:100%;display:block}
+@media(max-width:640px){
+  .fv-ov{padding:0}
+  .fv-bx{width:100%;height:100%;border-radius:0}
+}
 .undobar{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);z-index:120;
   display:flex;align-items:center;gap:14px;padding:12px 14px 12px 18px;border-radius:14px;
   background:var(--ink);color:#fff;font-size:13.5px;font-weight:500;box-shadow:0 10px 30px rgba(0,0,0,.24);
@@ -1364,6 +1462,7 @@ body.scrolled .brand .btext{display:none}
         <button data-thm="base" aria-pressed="true" title="기본 색" aria-label="기본 색"><span class="thm-e">💙</span></button>
         <button data-thm="pastel" aria-pressed="false" title="파스텔 색" aria-label="파스텔 색"><span class="thm-e">💗</span></button>
       </div>
+      <a class="navlink" id="topForms" href="#/forms">양식함</a>
       <button class="ghost" id="topHome">홈</button>
       <button class="cta" id="topSearch">검색</button>
     </nav>
@@ -1385,6 +1484,7 @@ body.scrolled .brand .btext{display:none}
   <nav class="dw" role="dialog" aria-modal="true" aria-label="분류" tabindex="-1">
     <div class="dw-hd"><b>분류로 찾기</b><button class="dw-x" id="dwX" aria-label="닫기"><svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></svg></button></div>
     <div class="dw-bd" id="dwBd"></div>
+    <a class="dw-forms" href="#/forms" id="dwForms">양식함 열기</a>
     <div class="dw-ask"><button class="askbtn" data-ask="1"><svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,128a96,96,0,0,1-144.07,83.11L46.5,222.6a8,8,0,0,1-10.1-10.1l11.49-33.43A96,96,0,1,1,224,128Z" opacity="0.2"/><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210a16,16,0,0,0,20.18,20.18l33.1-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></svg>문의하기</button></div>
     <div class="dw-thm"><span class="lb">색 테마</span>
       <div class="thm" role="group" aria-label="색 테마">
@@ -1420,6 +1520,16 @@ body.scrolled .brand .btext{display:none}
       <button class="btn-b" id="askGo">다시 찾아보기</button>
       <button class="btn-o" id="askX">알겠습니다 😅</button>
     </div>
+  </div>
+</div>
+<div class="fv-ov" id="fvOv" hidden>
+  <div class="fv-bx" role="dialog" aria-modal="true" aria-labelledby="fvName">
+    <div class="fv-hd">
+      <div class="fv-tt"><b id="fvName"></b><span id="fvSub"></span></div>
+      <button class="btn-b" id="fvDl">내려받기</button>
+      <button class="pop-x" id="fvX" aria-label="닫기"><svg width="17" height="17" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></svg></button>
+    </div>
+    <div class="fv-bd" id="fvBd"></div>
   </div>
 </div>
 <div class="lbox" id="lbox"><button class="lbox-x" id="lboxX" aria-label="닫기">&times;</button><img alt=""></div>
@@ -4318,6 +4428,8 @@ function applyGrp(g){
   if(state.cat==="보험사"){ state.sub = g==="생명보험" ? "생보" : "손보"; state.grp=""; state.co=null; }
   else state.grp=g;
   state.q=""; state.limit=PAGE; closeDrawer();
+  /* 홈이 아닌 화면(상세·양식함)에서 골랐다면 먼저 홈으로 갑니다 */
+  if(location.hash&&location.hash!=='#/'&&location.hash!==''){ location.hash='#/'; return; }
   updateList(); syncSearchInputs(); renderSide();
   const el=document.getElementById('faq'); if(el) el.scrollIntoView({block:'start'});
 }
@@ -4397,6 +4509,8 @@ function faqHTML(){
         ic(CATIC[c],16)+esc(c)+'</button>').join('')+
     '</div>'+
 
+    (searching?formsFoundHTML(k):'')+
+
     (isCo?(state.cmpOn?cmpSection():coSection()):
       '<section class="sec">'+
         '<div class="sec-hd">'+
@@ -4422,7 +4536,7 @@ function renderHome(){
   LAST_LIST='';
   app.innerHTML = heroHTML() + faqHTML();
   document.getElementById('mcta').innerHTML='';
-  bindHero(); bindList(); bindZoom(); bindRetry();
+  bindHero(); bindList(); bindZoom(); bindRetry(); bindForms();
 }
 /* 목록만 다시 그립니다. 검색창은 건드리지 않습니다. */
 let LAST_LIST='', MINH_T=0;
@@ -4450,7 +4564,7 @@ function updateList(){
       MINH_T=setTimeout(function(){ const c=document.getElementById('faq'); if(c) c.style.minHeight=''; },1500);
     }
   }
-  bindList(); bindZoom(); bindRetry();
+  bindList(); bindZoom(); bindRetry(); bindForms();
 }
 
 function noticeHTML(f){
@@ -4751,6 +4865,200 @@ function markChips(){
 function bindHome(){ bindHero(); bindList(); }
 
 /* ── 상세 ── */
+/* ══ 양식함 화면 ═════════════════════════════════ */
+let formState={q:'',cat:'전체'};
+
+function formIcon(kind){
+  const P2={
+    pdf:'<path d="M48,32H160l56,56V216a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V40A8,8,0,0,1,48,32Z" opacity="0.2"/><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40v72a8,8,0,0,0,16,0V40h88V88a8,8,0,0,0,8,8h48V216H56V184a8,8,0,0,0-16,0v32a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM48,136H24a8,8,0,0,0-8,8v32a8,8,0,0,0,16,0v-8H48a16,16,0,0,0,0-32Zm0,16H32v-8H48Zm60-16H88a8,8,0,0,0-8,8v32a8,8,0,0,0,8,8h20a24,24,0,0,0,0-48Zm0,32H96V152h12a8,8,0,0,1,0,16ZM184,144a8,8,0,0,1-8,8H160v8h12a8,8,0,0,1,0,16H160v8a8,8,0,0,1-16,0V144a8,8,0,0,1,8-8h24A8,8,0,0,1,184,144Z"/>',
+    img:'<path d="M216,40H40a8,8,0,0,0-8,8V208l58.34-58.34a8,8,0,0,1,11.32,0l31,31,31-31a8,8,0,0,1,11.32,0L224,200V48A8,8,0,0,0,216,40Z" opacity="0.2"/><path d="M216,32H40A16,16,0,0,0,24,48V208a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V48A16,16,0,0,0,216,32Zm0,16V180.69l-33.37-33.37a16,16,0,0,0-22.63,0L138.35,169,99.31,130a16,16,0,0,0-22.62,0L40,166.69V48ZM40,189.31l48-48L136.69,190l.11.11L154.34,208H40ZM216,208H177l-27.31-27.31L171.31,159,216,203.31V208ZM152,100a12,12,0,1,1,12,12A12,12,0,0,1,152,100Z"/>',
+    hwp:'<path d="M208,88H152V32Z" opacity="0.2"/><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216ZM152,144a8,8,0,0,1-8,8H128v24a8,8,0,0,1-16,0V152H96a8,8,0,0,1,0-16h16V112a8,8,0,0,1,16,0v24h16A8,8,0,0,1,152,144Z"/>',
+    xls:'<path d="M208,88H152V32Z" opacity="0.2"/><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216ZM155.66,140.71,139.31,164l16.35,23.29a8,8,0,1,1-13.32,8.86L128,178.5l-14.34,17.65a8,8,0,1,1-13.32-8.86L116.69,164l-16.35-23.29a8,8,0,0,1,13.32-8.86L128,149.5l14.34-17.65a8,8,0,0,1,13.32,8.86Z"/>',
+    doc:'<path d="M208,88H152V32Z" opacity="0.2"/><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-32-72a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,144Zm0,32a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,176Z"/>',
+    etc:'<path d="M208,88H152V32Z" opacity="0.2"/><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Z"/>'
+  };
+  const d=P2[kind]||P2.etc;
+  return '<svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">'+d+'</svg>';
+}
+
+/* 양식 검색 : 이름·설명·분류·숨은 검색어 + 초성 */
+function formHit(fm, q){
+  if(!q) return true;
+  const hay=(fm.name+' '+(fm.desc||'')+' '+(fm.cat||'')+' '+(fm.tags||'')).toLowerCase();
+  const words=q.toLowerCase().split(/\s+/).filter(Boolean);
+  return words.every(w=>{
+    if(hay.indexOf(w)>=0) return true;
+    if(/^[ㄱ-ㅎ]+$/.test(w)) return chosung(hay).replace(/\s/g,'').indexOf(w.toUpperCase())>=0
+                                || chosung(hay).indexOf(w.toUpperCase())>=0;
+    const ko=enToKo(w);
+    return !!(ko && ko.length>=2 && hay.indexOf(ko)>=0);
+  });
+}
+function matchedForms(q){
+  return formsSorted(visibleForms().filter(fm=>formHit(fm,q)));
+}
+
+function formRowHTML(fm){
+  const kind=kindOf(fm.ext);
+  return '<div class="fmrow" data-fk="'+esc(fm.key)+'">'+
+    '<span class="fmic k-'+kind+'">'+formIcon(kind)+'</span>'+
+    '<div class="fmtx">'+
+      '<div class="fmname">'+esc(fm.name)+'</div>'+
+      (fm.desc?'<div class="fmdesc">'+esc(fm.desc)+'</div>':'')+
+      '<div class="fmmeta">'+
+        (fm.cat?'<span class="fmcat">'+esc(fm.cat)+'</span>':'')+
+        '<span>'+(KIND_LABEL[kind]||'파일')+'</span>'+
+        '<span>'+sizeText(fm.size)+'</span>'+
+        (fm.at?'<span>'+esc(fm.at)+' 기준</span>':'')+
+      '</div>'+
+    '</div>'+
+    '<div class="fmact">'+
+      ((kind==='pdf'||kind==='img')?'<button class="btn-o fmopen" data-fk="'+esc(fm.key)+'">열어보기</button>':'')+
+      '<button class="btn-b fmdl" data-fk="'+esc(fm.key)+'">받기</button>'+
+    '</div>'+
+    '<div class="fmbar" hidden><i></i><span></span></div>'+
+  '</div>';
+}
+
+function formsHTML(){
+  const q=formState.q.trim();
+  let list=matchedForms(q);
+  if(formState.cat!=='전체') list=list.filter(f=>(f.cat||'그 밖)')===formState.cat);
+  const cats=['전체'].concat(FORM_CATS.filter(c=>visibleForms().some(f=>f.cat===c)));
+  return '<div class="shell"><div class="fmwrap">'+
+    '<div class="fmhero">'+
+      '<h1>양식함</h1>'+
+      '<p>자주 쓰는 서식과 안내문을 모아 두었습니다. 눌러서 바로 받으세요.</p>'+
+      '<div class="fmsearch">'+
+        '<span class="sicon">'+ic('search',18)+'</span>'+
+        '<input id="fmq" type="search" autocomplete="off" aria-label="양식 검색" placeholder="양식 이름으로 찾기" value="'+esc(formState.q)+'">'+
+      '</div>'+
+      (cats.length>1?'<div class="fmcats">'+cats.map(c=>
+        '<button class="fmchip'+(formState.cat===c?' on':'')+'" data-fc="'+esc(c)+'">'+esc(c)+'</button>').join('')+'</div>':'')+
+    '</div>'+
+    (list.length
+      ? '<div class="fmlist">'+list.map(formRowHTML).join('')+'</div>'
+      : '<div class="empty"><span class="eic">'+ic('file',26)+'</span>'+
+        '<h3>'+(visibleForms().length?'찾으시는 양식이 없습니다':'아직 올라온 양식이 없습니다')+'</h3>'+
+        '<p>'+(visibleForms().length?'다른 말로 찾아보시거나, 아래 문의하기를 눌러주세요.':'담당 총무가 올리면 여기에 보입니다.')+'</p></div>')+
+    '<div class="fmfoot">'+
+      '<h3>찾으시는 양식이 없나요?</h3>'+
+      '<p>먼저 FAQ에서 그 업무를 찾아보세요. 양식이 글 안에 붙어 있는 경우가 많습니다.</p>'+
+      '<div class="fmfbtn">'+
+        '<a class="btn-b" href="#/">FAQ에서 찾아보기</a>'+
+        '<button class="btn-o" data-ask="1">그래도 없으면 문의하기</button>'+
+      '</div>'+
+    '</div>'+
+  '</div></div>';
+}
+
+/* 홈에서 검색할 때, 이름이 맞는 양식이 있으면 위에 함께 보여줍니다 */
+function formsFoundHTML(q){
+  const hit=matchedForms(String(q||'').trim()).slice(0,4);
+  if(!hit.length) return '';
+  return '<section class="sec fmfound">'+
+    '<div class="sec-hd"><h2>'+ic('file',18)+'양식함에서 찾았습니다'+
+      '<span class="cnt">'+hit.length+'건</span></h2>'+
+      '<a class="fmall" href="#/forms">양식함 전체 보기'+ic('arw',14)+'</a></div>'+
+    '<div class="fmlist">'+hit.map(formRowHTML).join('')+'</div>'+
+  '</section>';
+}
+
+function renderForms(){
+  app.innerHTML=formsHTML();
+  document.getElementById('mcta').innerHTML='';
+  bindForms();
+}
+function updateFormList(){
+  const wrap=document.querySelector('.fmwrap');
+  if(!wrap){ renderForms(); return; }
+  const cur=document.getElementById('fmq');
+  const at=cur?cur.selectionStart:null;
+  wrap.outerHTML=formsHTML().replace(/^<div class="shell">|<\/div>$/g,'');
+  bindForms();
+  const nx=document.getElementById('fmq');
+  if(nx&&cur===document.activeElement){ nx.focus(); if(at!=null) try{nx.setSelectionRange(at,at);}catch(e){} }
+}
+
+function fmBar(row, pct, msg){
+  const bar=row.querySelector('.fmbar');
+  if(!bar) return;
+  bar.hidden=false;
+  bar.querySelector('i').style.width=Math.max(3,pct)+'%';
+  bar.querySelector('span').textContent=msg||(pct+'%');
+}
+function fmBarOff(row){ const bar=row.querySelector('.fmbar'); if(bar){bar.hidden=true; bar.querySelector('i').style.width='0%';} }
+
+async function withFile(key, act){
+  const fm=FORMS.find(x=>x.key===key);
+  if(!fm) return;
+  const row=document.querySelector('.fmrow[data-fk="'+key+'"]');
+  const btns=row?row.querySelectorAll('button'):[];
+  btns.forEach(b=>b.disabled=true);
+  if(row) fmBar(row, 3, '받는 중...');
+  try{
+    const rec=await fetchFormFile(fm, p=>{ if(row) fmBar(row, p, p<100?'받는 중 '+p+'%':'준비 완료'); });
+    act(fm, rec);
+    if(row) setTimeout(()=>fmBarOff(row), 700);
+  }catch(e){
+    if(row) fmBar(row, 100, String(e.message||e));
+    toast(String(e.message||e));
+    if(row) setTimeout(()=>fmBarOff(row), 2600);
+  }finally{
+    btns.forEach(b=>b.disabled=false);
+  }
+}
+/* 윈도우에서 파일 이름에 못 쓰는 글자를 걸러냅니다 */
+function safeName(n){
+  return String(n||'파일').replace(/[\\/:*?"<>|\u0000-\u001f]/g,' ').replace(/\s+/g,' ').trim().slice(0,120) || '파일';
+}
+function saveAs(rec, filename){
+  const a=document.createElement('a');
+  a.href=rec.url; a.download=safeName(filename);
+  document.body.appendChild(a); a.click();
+  setTimeout(()=>{ if(a.parentNode) a.parentNode.removeChild(a); },100);
+}
+function openViewer(fm, rec){
+  const kind=kindOf(fm.ext);
+  const ov=document.getElementById('fvOv');
+  document.getElementById('fvName').textContent=fm.name;
+  document.getElementById('fvSub').textContent=(KIND_LABEL[kind]||'파일')+' · '+sizeText(fm.size)+(fm.at?' · '+fm.at+' 기준':'');
+  const bd=document.getElementById('fvBd');
+  bd.innerHTML = kind==='img'
+    ? '<img src="'+rec.url+'" alt="'+esc(fm.name)+'">'
+    : '<iframe src="'+rec.url+'" title="'+esc(fm.name)+'"></iframe>';
+  const dl=document.getElementById('fvDl');
+  dl.onclick=()=>saveAs(rec, fm.name+'.'+(fm.ext||'file'));
+  ov.hidden=false; requestAnimationFrame(()=>ov.classList.add('on'));
+  lockScroll();
+  document.getElementById('fvX').focus();
+}
+function closeViewer(){
+  const ov=document.getElementById('fvOv');
+  if(!ov||ov.hidden) return;
+  ov.classList.remove('on'); ov.hidden=true;
+  document.getElementById('fvBd').innerHTML='';
+  unlockScroll();
+}
+
+function bindForms(){
+  const q=document.getElementById('fmq');
+  if(q){
+    let comp=false, t=null;
+    q.addEventListener('compositionstart',()=>comp=true);
+    q.addEventListener('compositionend',()=>{comp=false;fire();});
+    const fire=()=>{ clearTimeout(t); t=setTimeout(()=>{ formState.q=q.value; updateFormList(); },200); };
+    q.addEventListener('input',()=>{ if(!comp) fire(); });
+  }
+  document.querySelectorAll('.fmchip').forEach(b=>b.addEventListener('click',()=>{
+    formState.cat=b.dataset.fc; updateFormList();
+  }));
+  document.querySelectorAll('.fmopen').forEach(b=>b.addEventListener('click',()=>
+    withFile(b.dataset.fk, (fm,rec)=>openViewer(fm,rec))));
+  document.querySelectorAll('.fmdl').forEach(b=>b.addEventListener('click',()=>
+    withFile(b.dataset.fk, (fm,rec)=>saveAs(rec, fm.name+'.'+(fm.ext||'file')))));
+}
+
 function renderDetail(id){
   const f=DATA.find(x=>x.id===id);
   if(!f){location.hash='#/';return;}
@@ -4992,6 +5300,7 @@ function renderAdmin(){
         '<button class="admtab" data-tab="list" aria-pressed="'+(admTab==='list')+'">FAQ 목록</button>'+
         '<button class="admtab" data-tab="edit" aria-pressed="'+(admTab==='edit')+'">'+(f?'항목 수정':'항목 추가')+'</button>'+
         '<button class="admtab" data-tab="hist" aria-pressed="'+(admTab==='hist')+'">수정 이력</button>'+
+        '<button class="admtab" data-tab="forms" aria-pressed="'+(admTab==='forms')+'">양식함</button>'+
         '<button class="admtab" data-tab="hello" aria-pressed="'+(admTab==='hello')+'">인사말</button>'+
         '<button class="admtab" data-tab="logout" aria-pressed="false">로그아웃</button>'+
       '</div></div>'+
@@ -5000,11 +5309,205 @@ function renderAdmin(){
       (API.on()?'<button class="btn-b" id="pubBtn">지금 게시하기</button>':'')+
     '</div>'+
     (admTab==='edit'?editorHTML(f):admTab==='dash'?dashHTML():admTab==='hist'?histHTML()
-      :admTab==='hello'?helloHTML():tableHTML(list))+
+      :admTab==='hello'?helloHTML():admTab==='forms'?formsAdminHTML():tableHTML(list))+
   '</div>';
   document.getElementById('mcta').innerHTML='';
   bindAdmin();
   if(admTab==='edit') bindRich();
+  if(admTab==='forms') bindFormsAdmin();
+}
+
+/* ══ 관리자 : 양식함 ═════════════════════════════
+   파일은 [올리기]를 누르는 순간 시트에 바로 올라갑니다.
+   목록(이름·설명·분류)은 위쪽 [지금 게시하기]를 눌러야 설계사분들께 보입니다.
+   ═══════════════════════════════════════════════ */
+let formEdit=null;        /* null=목록만 · 'new'=새로 올리기 · 키=그 양식 고치기 */
+let formPick=null;        /* 고른 파일 {blob, ext, size, name} */
+
+function formCatOpts(v){
+  const list=FORM_CATS.slice();
+  if(v && list.indexOf(v)<0) list.push(v);
+  return list.map(c=>'<option value="'+esc(c)+'"'+(c===v?' selected':'')+'>'+esc(c)+'</option>').join('');
+}
+
+function formPanelHTML(){
+  const isNew = formEdit==='new';
+  const fm = isNew?null:FORMS.find(x=>x.key===formEdit);
+  if(!isNew && !fm) return '';
+  const today=new Date().toISOString().slice(0,10);
+  return '<div class="panelbox"><h3>'+(isNew?'새 양식 올리기':'양식 고치기')+'</h3>'+
+    '<p class="hint">'+(isNew
+      ? 'PDF·사진·한글·엑셀 모두 됩니다. 파일 하나에 <b>10MB</b>까지, 5MB 넘으면 받는 데 시간이 걸립니다.'
+      : '파일을 다시 고르면 새 파일로 바뀝니다. 그냥 두면 이름·설명만 바뀝니다.')+'</p>'+
+    '<div class="field"><label for="fmfile">파일</label>'+
+      '<input type="file" id="fmfile" accept=".pdf,.png,.jpg,.jpeg,.webp,.gif,.hwp,.hwpx,.doc,.docx,.xls,.xlsx,.xlsm,.csv,.ppt,.pptx,.txt,.zip">'+
+      '<p class="help" id="fmfileMsg">'+(fm?'지금 파일 : '+esc(fm.name)+'.'+esc(fm.ext)+' ('+sizeText(fm.size)+')':'아직 고르지 않았습니다.')+'</p></div>'+
+    '<div class="frow">'+
+      '<div class="field"><label for="fmname">이름</label><input id="fmname" value="'+esc(fm?fm.name:'')+'" placeholder="예) 위촉 신청서"></div>'+
+      '<div class="field"><label for="fmcat">분류</label><select id="fmcat">'+formCatOpts(fm?fm.cat:FORM_CATS[0])+'</select></div>'+
+    '</div>'+
+    '<div class="field"><label for="fmdesc">한 줄 설명</label>'+
+      '<input id="fmdesc" value="'+esc(fm?(fm.desc||''):'')+'" placeholder="예) 신규 위촉 때 내는 서식입니다"></div>'+
+    '<div class="field"><label for="fmtags">숨은 검색어</label>'+
+      '<input id="fmtags" value="'+esc(fm?(fm.tags||''):'')+'" placeholder="예) 위촉신청 위촉서류 신청서">'+
+      '<p class="help">화면에는 안 보이고 <b>검색에만</b> 걸립니다.</p></div>'+
+    '<div class="frow">'+
+      '<div class="field"><label for="fmat">기준일</label><input id="fmat" type="date" value="'+esc(fm?(fm.at||today):today)+'"></div>'+
+      '<div class="field"><label for="fmorder">정렬 순서</label><input id="fmorder" type="number" value="'+(fm?(fm.order||1):(FORMS.length+1))+'"></div>'+
+    '</div>'+
+    '<div class="checks"><label><input type="checkbox" id="fmvis"'+(!fm||fm.visible!==false?' checked':'')+'>목록에 공개</label></div>'+
+    '<div class="fmup" id="fmUp" hidden><i></i><span></span></div>'+
+    '<div class="abtns">'+
+      '<button class="btn-b" id="fmSave">'+(isNew?'올리기':'저장')+'</button>'+
+      '<button class="btn-o" id="fmCancel">취소</button>'+
+    '</div>'+
+  '</div>';
+}
+
+function formsAdminHTML(){
+  const list=formsSorted(FORMS);
+  return (formEdit?formPanelHTML():'')+
+  '<div class="panelbox"><h3>양식함</h3>'+
+    '<p class="hint">파일은 <b>올리는 순간</b> 구글 시트에 저장됩니다. 목록에 보이게 하려면 위쪽 <b>지금 게시하기</b>까지 눌러주세요.'+
+      (API.on()?'':' <b>서버가 연결되어 있지 않아 지금은 파일을 올릴 수 없습니다.</b>')+'</p>'+
+    '<div class="abtns" style="margin:0 0 14px">'+
+      '<button class="btn-b" id="fmNew"'+(API.on()?'':' disabled')+'>새 양식 올리기</button>'+
+      '<button class="btn-o" id="fmSweep">안 쓰는 파일 정리</button>'+
+      '<span class="hlprev" id="fmMsg"></span></div>'+
+    (list.length
+      ? '<div class="tblwrap"><table class="atbl"><thead><tr>'+
+          '<th>순서</th><th>이름</th><th>분류</th><th>형식</th><th>크기</th><th>기준일</th><th>공개</th><th></th>'+
+        '</tr></thead><tbody>'+
+        list.map(fm=>'<tr>'+
+          '<td>'+(fm.order||1)+'</td>'+
+          '<td><b>'+esc(fm.name)+'</b>'+(fm.desc?'<br><span class="sb">'+esc(fm.desc)+'</span>':'')+'</td>'+
+          '<td>'+esc(fm.cat||'')+'</td>'+
+          '<td>'+(KIND_LABEL[kindOf(fm.ext)]||'파일')+'</td>'+
+          '<td>'+sizeText(fm.size)+'</td>'+
+          '<td>'+esc(fm.at||'')+'</td>'+
+          '<td>'+(fm.visible===false?'숨김':'공개')+'</td>'+
+          '<td class="acts">'+
+            '<button class="mini" data-fmedit="'+esc(fm.key)+'">고치기</button>'+
+            '<button class="mini" data-fmget="'+esc(fm.key)+'">받아보기</button>'+
+            '<button class="mini danger" data-fmdel="'+esc(fm.key)+'">삭제</button>'+
+          '</td></tr>').join('')+
+        '</tbody></table></div>'
+      : '<p class="hint">아직 올린 양식이 없습니다. <b>새 양식 올리기</b>를 눌러 시작하세요.</p>')+
+  '</div>';
+}
+
+function fmUpBar(pct,msg){
+  const el=document.getElementById('fmUp');
+  if(!el) return;
+  el.hidden=false;
+  el.querySelector('i').style.width=Math.max(3,pct)+'%';
+  el.querySelector('span').textContent=msg||(pct+'%');
+}
+
+function bindFormsAdmin(){
+  const nb=document.getElementById('fmNew');
+  if(nb) nb.addEventListener('click',()=>{ formEdit='new'; formPick=null; renderAdmin(); window.scrollTo(0,0); });
+  app.querySelectorAll('[data-fmedit]').forEach(b=>b.addEventListener('click',()=>{
+    formEdit=b.dataset.fmedit; formPick=null; renderAdmin(); window.scrollTo(0,0);
+  }));
+  app.querySelectorAll('[data-fmget]').forEach(b=>b.addEventListener('click',async ()=>{
+    const fm=FORMS.find(x=>x.key===b.dataset.fmget); if(!fm) return;
+    const msg=document.getElementById('fmMsg');
+    b.disabled=true;
+    try{
+      const rec=await fetchFormFile(fm, p=>{ if(msg) msg.textContent='받는 중 '+p+'%'; });
+      saveAs(rec, fm.name+'.'+(fm.ext||'file'));
+      if(msg) msg.textContent='잘 받아집니다.';
+    }catch(e){ if(msg) msg.textContent='받지 못했습니다 : '+(e.message||e); }
+    b.disabled=false;
+  }));
+  app.querySelectorAll('[data-fmdel]').forEach(b=>b.addEventListener('click',async ()=>{
+    const fm=FORMS.find(x=>x.key===b.dataset.fmdel); if(!fm) return;
+    if(!confirm('「'+fm.name+'」 을 목록에서 지우고 올린 파일도 삭제합니다. 진행할까요?')) return;
+    b.disabled=true;
+    await API.send({action:'filedel', token:admToken, key:fm.key});
+    FORMS=FORMS.filter(x=>x.key!==fm.key);
+    delete FILECACHE[fm.key];
+    renderAdmin();
+    const msg=document.getElementById('fmMsg');
+    if(msg) msg.textContent='지웠습니다. 게시까지 눌러주세요.';
+  }));
+  const sw=document.getElementById('fmSweep');
+  if(sw) sw.addEventListener('click',async ()=>{
+    const msg=document.getElementById('fmMsg');
+    if(msg) msg.textContent='확인 중...';
+    const j=await API.call({action:'filekeys', token:admToken});
+    if(!j||!j.ok){ if(msg) msg.textContent='확인하지 못했습니다.'; return; }
+    const live=new Set(FORMS.map(x=>x.key));
+    const dead=Object.keys(j.keys||{}).filter(k=>!live.has(k));
+    if(!dead.length){ if(msg) msg.textContent='버려진 파일이 없습니다. 깨끗합니다.'; return; }
+    if(!confirm('목록에 없는 파일 '+dead.length+'개를 시트에서 지웁니다. 진행할까요?')) return;
+    for(const k of dead) await API.send({action:'filedel', token:admToken, key:k});
+    if(msg) msg.textContent=dead.length+'개를 정리했습니다.';
+  });
+
+  const fi=document.getElementById('fmfile');
+  if(fi) fi.addEventListener('change',async ()=>{
+    const file=fi.files&&fi.files[0];
+    const m=document.getElementById('fmfileMsg');
+    if(!file){ formPick=null; return; }
+    if(file.size>FILE_MAX){
+      formPick=null; fi.value='';
+      m.textContent='파일이 너무 큽니다 ('+sizeText(file.size)+'). 10MB 이하만 올릴 수 있습니다.';
+      return;
+    }
+    m.textContent='읽는 중...';
+    const r=await shrinkForForm(file);
+    formPick={blob:r.blob, ext:(r.ext||extOf(file.name)||'file'), size:r.blob.size, name:file.name};
+    const nameBox=document.getElementById('fmname');
+    if(nameBox && !nameBox.value.trim()) nameBox.value=file.name.replace(/\.[^.]+$/,'');
+    m.textContent='고른 파일 : '+file.name+' ('+sizeText(r.blob.size)+
+      (r.blob.size<file.size?' · 원본 '+sizeText(file.size)+'에서 줄였습니다':'')+')'+
+      (r.blob.size>FILE_WARN?' — 큰 파일이라 올리고 받는 데 시간이 걸립니다.':'');
+  });
+
+  const cancel=document.getElementById('fmCancel');
+  if(cancel) cancel.addEventListener('click',()=>{ formEdit=null; formPick=null; renderAdmin(); });
+
+  const save=document.getElementById('fmSave');
+  if(save) save.addEventListener('click',async ()=>{
+    const g=id=>document.getElementById(id);
+    const isNew = formEdit==='new';
+    const name=g('fmname').value.trim();
+    if(!name){ toast('이름을 적어주세요'); g('fmname').focus(); return; }
+    if(isNew && !formPick){ toast('올릴 파일을 골라주세요'); g('fmfile').focus(); return; }
+    const old = isNew?null:FORMS.find(x=>x.key===formEdit);
+    if(!isNew && !old) return;
+    save.disabled=true;
+    try{
+      let key = isNew ? newFormKey() : old.key;
+      let ext = isNew ? formPick.ext : old.ext;
+      let size = isNew ? formPick.size : old.size;
+      if(formPick){
+        fmUpBar(2,'파일 읽는 중...');
+        const b64=await blobToB64(formPick.blob);
+        fmUpBar(4,'올리는 중...');
+        await putFormFile(key, b64, p=>fmUpBar(p, p<100?'올리는 중 '+p+'%':'저장 확인 중...'));
+        ext=formPick.ext; size=formPick.size;
+        delete FILECACHE[key];
+        fmUpBar(100,'다 올렸습니다.');
+      }
+      const rec={key:key, name:name, desc:g('fmdesc').value.trim(), cat:g('fmcat').value,
+        tags:g('fmtags').value.trim(), ext:ext, size:size,
+        at:g('fmat').value||new Date().toISOString().slice(0,10),
+        order:+g('fmorder').value||1, visible:g('fmvis').checked};
+      if(isNew) FORMS.push(rec);
+      else Object.assign(old, rec);
+      formEdit=null; formPick=null;
+      renderAdmin();
+      const msg=document.getElementById('fmMsg');
+      if(msg) msg.textContent=(isNew?'올렸습니다.':'저장했습니다.')+' 위쪽 [지금 게시하기]까지 눌러야 설계사분들께 보입니다.';
+    }catch(e){
+      fmUpBar(100, String(e.message||e));
+      toast(String(e.message||e));
+      save.disabled=false;
+    }
+  });
 }
 
 /* ══ 관리자 : 인사말 고치기 ═══════════════════════ */
@@ -5394,6 +5897,7 @@ function bindAdmin(){
     if(b.dataset.tab==='home'){location.hash='#/';return;}
     if(b.dataset.tab==='logout'){ setAdmToken(null); location.hash='#/'; return; }
     admTab=b.dataset.tab; if(admTab==='list') editingId=null;
+    if(admTab!=='forms'){ formEdit=null; formPick=null; }
     if(admTab==='dash'&&!DASH.loaded) loadDash();
     if(admTab==='hist'&&!HIST.loaded) loadHist();
     renderAdmin();
@@ -5412,6 +5916,8 @@ function bindAdmin(){
       const cfg=j.faq.find(o=>o&&o.__cfg);
       if(cfg&&cfg.hello) HELLO=helloFix(cfg.hello);
       if(cfg&&cfg.imgs) Object.assign(IMAGES,cfg.imgs);
+      if(cfg&&Array.isArray(cfg.forms)) FORMS=cfg.forms;
+      if(cfg&&Array.isArray(cfg.fcats)&&cfg.fcats.length) FORM_CATS=cfg.fcats;
       DATA=j.faq.filter(o=>o&&!o.__cfg).map(o=>({...o,img:o.img||[]})); IDX=null;
       HIST.loaded=false; loadHist(); alert('되돌렸습니다.'); }
     else { alert('되돌리지 못했습니다. 다시 로그인 후 시도해 주세요.'); b.disabled=false; b.textContent='이 시점으로 되돌리기'; }
@@ -5481,7 +5987,7 @@ function bindAdmin(){
     const st=document.getElementById('pubState');
     /* 인사말은 목록 맨 뒤에 설정 한 줄로 붙여 함께 저장합니다 */
     await API.send({action:'publish', token:admToken,
-      faq:DATA.concat([{__cfg:1, hello:HELLO, imgs:addedImages()}])});
+      faq:DATA.concat([{__cfg:1, hello:HELLO, imgs:addedImages(), forms:FORMS, fcats:FORM_CATS}])});
     await new Promise(r=>setTimeout(r,1200));
     const chk=await API.call({action:'check'});
     if(chk && chk.count===DATA.length+1){
@@ -5550,6 +6056,10 @@ function exportFile(){
   let out=src.replace(/const FAQ_DATA = \[[\s\S]*?\n\];/,()=>b);
   const hb='const HELLO_DEFAULT = '+JSON.stringify(HELLO)+';';
   out=out.replace(/const HELLO_DEFAULT = \{[\s\S]*?\};/,()=>hb);
+  const fb='const FORMS_DEFAULT = '+JSON.stringify(FORMS)+';';
+  out=out.replace(/const FORMS_DEFAULT = \[[\s\S]*?\];/,()=>fb);
+  const fcb='const FORM_CATS_DEFAULT = '+JSON.stringify(FORM_CATS)+';';
+  out=out.replace(/const FORM_CATS_DEFAULT = \[[\s\S]*?\];/,()=>fcb);
   const ib='const IMAGES = '+JSON.stringify(IMAGES)+';';
   out=out.replace(/const IMAGES = \{[\s\S]*?\};\n/,()=>ib+'\n');
   const blob=new Blob(['<!DOCTYPE html>\n'+out],{type:'text/html;charset=utf-8'});
@@ -5564,6 +6074,7 @@ function route(){
   const h=location.hash||'#/';
   if(h.startsWith('#/faq/')) renderDetail(+h.split('/')[2]);
   else if(h==='#/admin') renderAdmin();
+  else if(h.indexOf('#/forms')===0) renderForms();
   else renderHome();
 }
 window.addEventListener('hashchange',route);
@@ -5585,6 +6096,9 @@ document.addEventListener('click',e=>{
 document.getElementById('lbox').addEventListener('click',e=>{if(e.target.id!=='lboxX'&&e.target.tagName==='IMG')return;closeBox();});
 document.getElementById('lboxX').addEventListener('click',closeBox);
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeBox();});
+document.getElementById('fvX').addEventListener('click',closeViewer);
+document.getElementById('fvOv').addEventListener('click',e=>{ if(e.target.id==='fvOv') closeViewer(); });
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeViewer();});
 
 /* ═══ 공지 팝업 ═══════════════════════════════════════════
    pinned 공지를 사이트 접속 시 팝업으로 보여줍니다.
@@ -5691,6 +6205,8 @@ async function syncFromServer(){
     const cfg=j.faq.find(o=>o&&o.__cfg);
     if(cfg&&cfg.hello) HELLO=helloFix(cfg.hello);
     if(cfg&&cfg.imgs) Object.assign(IMAGES,cfg.imgs);
+    if(cfg&&Array.isArray(cfg.forms)) FORMS=cfg.forms;
+    if(cfg&&Array.isArray(cfg.fcats)&&cfg.fcats.length) FORM_CATS=cfg.fcats;
     DATA=j.faq.filter(o=>o&&!o.__cfg).map(o=>({...o, img:o.img||[]}));
     IDX=null;                       /* 내용이 바뀌었으니 검색 색인을 다시 만듭니다 */
     SERVER_SYNCED=true;
@@ -5769,6 +6285,129 @@ function greeting(){
   return pool[Math.floor(Math.random()*pool.length)];
 }
 
+
+/* ══ 양식함 ══════════════════════════════════════════
+   서식·양식 파일을 목록으로 모아 둡니다.
+   파일 자체는 사이트에 넣지 않고 구글 시트에 조각내어 담아 두었다가,
+   누르는 순간에만 그 파일만 받아옵니다.
+   그래서 파일이 아무리 많아져도 접속 속도는 그대로입니다.
+   ═══════════════════════════════════════════════ */
+const FORMS_DEFAULT = [];
+const FORM_CATS_DEFAULT = ["위촉·코드","계약·서류","고객 응대","정산·실적","전산","그 밖"];
+let FORMS = JSON.parse(JSON.stringify(FORMS_DEFAULT));
+let FORM_CATS = FORM_CATS_DEFAULT.slice();
+
+const B64_CELL = 45000;      /* 시트 한 칸에 담는 글자 수 (Code.gs 와 같아야 합니다) */
+const PUT_BATCH = 20;        /* 한 번에 올리는 조각 수 (약 900KB) */
+const GET_BATCH = 20;        /* 한 번에 받아오는 조각 수 */
+const FILE_MAX = 10*1024*1024;   /* 파일 하나 최대 10MB */
+const FILE_WARN = 5*1024*1024;   /* 5MB 넘으면 느리다고 알려줍니다 */
+const FILECACHE = {};        /* 한 번 받은 파일은 기억해 둡니다 */
+
+const EXT_KIND = {
+  pdf:'pdf',
+  png:'img', jpg:'img', jpeg:'img', gif:'img', webp:'img', bmp:'img', heic:'img',
+  hwp:'hwp', hwpx:'hwp',
+  xls:'xls', xlsx:'xls', xlsm:'xls', csv:'xls',
+  doc:'doc', docx:'doc', rtf:'doc',
+  ppt:'ppt', pptx:'ppt',
+  zip:'zip', txt:'txt'
+};
+const KIND_LABEL = {pdf:'PDF', img:'사진', hwp:'한글', xls:'엑셀', doc:'워드', ppt:'PPT', zip:'압축', txt:'텍스트', etc:'파일'};
+const KIND_MIME = {pdf:'application/pdf', hwp:'application/x-hwp', xls:'application/vnd.ms-excel',
+  doc:'application/msword', ppt:'application/vnd.ms-powerpoint', zip:'application/zip', txt:'text/plain'};
+function extOf(name){ const m=String(name||'').toLowerCase().match(/\.([a-z0-9]+)$/); return m?m[1]:''; }
+function kindOf(ext){ return EXT_KIND[String(ext||'').toLowerCase()] || 'etc'; }
+function sizeText(n){
+  n=Number(n)||0;
+  if(n<1024) return n+' B';
+  if(n<1024*1024) return Math.round(n/1024)+' KB';
+  return (n/1024/1024).toFixed(1)+' MB';
+}
+function newFormKey(){
+  return 'fm'+Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+}
+
+/* base64 ↔ 파일 */
+function blobToB64(blob){
+  return new Promise((ok,no)=>{
+    const r=new FileReader();
+    r.onload=()=>{ const s=String(r.result||''); const i=s.indexOf(','); ok(i<0?s:s.slice(i+1)); };
+    r.onerror=()=>no(new Error('파일을 읽지 못했습니다'));
+    r.readAsDataURL(blob);
+  });
+}
+function b64ToBlob(b64, mime){
+  const bin=atob(b64), len=bin.length, buf=new Uint8Array(len);
+  for(let i=0;i<len;i++) buf[i]=bin.charCodeAt(i);
+  return new Blob([buf], {type:mime||'application/octet-stream'});
+}
+
+/* 파일 받아오기 : 조각을 이어 붙입니다 */
+async function fetchFormFile(fm, onStep){
+  if(FILECACHE[fm.key]) return FILECACHE[fm.key];
+  if(!API.on()) throw new Error('서버가 연결되어 있지 않아 파일을 받을 수 없습니다');
+  let i=0, buf='', total=0;
+  for(let guard=0; guard<600; guard++){
+    const j=await API.call({action:'fileget', key:fm.key, i:i, n:GET_BATCH});
+    if(!j) throw new Error('서버에 닿지 못했습니다. 잠시 뒤 다시 눌러주세요');
+    if(!j.ok) throw new Error(j.error||'파일을 받지 못했습니다');
+    buf+=j.data; total=j.total; i=j.next;
+    if(onStep) onStep(Math.min(99, Math.round(i/Math.max(1,total)*100)));
+    if(i>=total) break;
+  }
+  const mime = fm.mime || KIND_MIME[kindOf(fm.ext)] || (kindOf(fm.ext)==='img' ? 'image/'+(fm.ext==='jpg'?'jpeg':fm.ext) : 'application/octet-stream');
+  const blob = b64ToBlob(buf, mime);
+  const rec = {blob:blob, url:URL.createObjectURL(blob), mime:mime};
+  FILECACHE[fm.key]=rec;
+  if(onStep) onStep(100);
+  return rec;
+}
+
+/* 파일 올리기 : 조각내어 여러 번 보냅니다 */
+async function putFormFile(key, b64, onStep){
+  const total = Math.ceil(b64.length/B64_CELL) || 1;
+  for(let from=0; from<total; from+=PUT_BATCH){
+    const data = b64.slice(from*B64_CELL, Math.min(from+PUT_BATCH, total)*B64_CELL);
+    const ok = await API.send({action:'fileput', token:admToken, key:key, from:from, total:total, data:data});
+    if(!ok) throw new Error('올리는 중에 끊겼습니다. 다시 시도해주세요');
+    if(onStep) onStep(Math.round(Math.min(from+PUT_BATCH,total)/total*100));
+  }
+  const chk = await API.call({action:'fileinfo', key:key});
+  if(!chk || !chk.done) throw new Error('올린 파일이 다 저장되지 않았습니다 ('+((chk&&chk.have)||0)+'/'+total+' 조각). 다시 시도해주세요');
+  return true;
+}
+
+/* 사진은 너무 크면 줄여서 담습니다. 그 밖의 파일은 원본 그대로 */
+function shrinkForForm(file){
+  return new Promise(resolve=>{
+    if(kindOf(extOf(file.name))!=='img' || file.size < 400*1024) return resolve({blob:file, ext:extOf(file.name)});
+    const fr=new FileReader();
+    fr.onload=()=>{
+      const im=new Image();
+      im.onload=()=>{
+        const MAX=2400;
+        const r=Math.min(1, MAX/Math.max(im.width,im.height));
+        const c=document.createElement('canvas');
+        c.width=Math.round(im.width*r); c.height=Math.round(im.height*r);
+        c.getContext('2d').drawImage(im,0,0,c.width,c.height);
+        c.toBlob(b=>{
+          if(b && b.size < file.size) resolve({blob:b, ext:'webp'});
+          else resolve({blob:file, ext:extOf(file.name)});
+        }, 'image/webp', 0.9);
+      };
+      im.onerror=()=>resolve({blob:file, ext:extOf(file.name)});
+      im.src=String(fr.result||'');
+    };
+    fr.onerror=()=>resolve({blob:file, ext:extOf(file.name)});
+    fr.readAsDataURL(file);
+  });
+}
+
+function visibleForms(){ return FORMS.filter(f=>f.visible!==false); }
+function formsSorted(list){
+  return list.slice().sort((a,b)=>(a.order||99)-(b.order||99) || String(a.name).localeCompare(String(b.name),'ko'));
+}
 
 /* ── 최근 본 질문 ─────────────────────────────── */
 const RECENT_KEY='faqRecent', RECENT_MAX=4;
@@ -5899,7 +6538,8 @@ const FOCUSABLE='a[href],button:not([disabled]),input:not([disabled]),select,tex
 document.addEventListener('keydown',e=>{
   if(e.key!=='Tab') return;
   const box=[document.getElementById('popOv'),document.getElementById('cellOv'),
-             document.getElementById('askOv'),document.getElementById('dwOv')]
+             document.getElementById('askOv'),document.getElementById('dwOv'),
+             document.getElementById('fvOv')]
             .filter(x=>x&&!x.hidden).pop();
   if(!box) return;
   const f=[...box.querySelectorAll(FOCUSABLE)].filter(x=>x.offsetParent||x===document.activeElement);
@@ -5982,6 +6622,7 @@ document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeAsk(); });
 /* ── 헤더 : 분류 서랍 ─────────────────────────── */
 document.getElementById('dwBtn').addEventListener('click',openDrawer);
 document.getElementById('dwX').addEventListener('click',closeDrawer);
+document.getElementById('dwForms').addEventListener('click',()=>setTimeout(closeDrawer,10));
 document.getElementById('dwOv').addEventListener('click',e=>{ if(e.target.id==='dwOv') closeDrawer(); });
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeDrawer(); });
 
