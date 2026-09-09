@@ -1216,6 +1216,68 @@ body.scrolled .brand .btext{display:none}
   color:var(--ink);resize:vertical}
 .hlbox textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-soft)}
 .hlprev{align-self:center;font-size:13px;color:var(--ink-2)}
+/* ── 글 안의 양식함 연결 ── */
+a.fmlink{display:flex;align-items:center;gap:11px;margin:8px 0;padding:11px 13px;
+  border:1px solid var(--line-2);border-radius:var(--r-sm);background:var(--surface-2);
+  text-decoration:none;color:var(--ink);font-weight:500;cursor:pointer;transition:.15s;
+  max-width:440px}
+a.fmlink:hover{border-color:var(--blue-line);background:var(--blue-soft)}
+a.fmlink:active{transform:scale(.995)}
+a.fmlink .fmlic{flex:0 0 auto;width:36px;height:36px;display:grid;place-items:center;
+  border-radius:10px;background:var(--surface);color:var(--ink-3);border:1px solid var(--line)}
+a.fmlink.k-pdf .fmlic{background:var(--p-rose);color:var(--p-rose-i);border-color:transparent}
+a.fmlink.k-img .fmlic{background:var(--p-sky);color:var(--p-sky-i);border-color:transparent}
+a.fmlink.k-hwp .fmlic{background:var(--p-peri);color:var(--p-peri-i);border-color:transparent}
+a.fmlink.k-xls .fmlic{background:var(--p-mint);color:var(--p-mint-i);border-color:transparent}
+a.fmlink.k-doc .fmlic{background:var(--p-sky);color:var(--p-sky-i);border-color:transparent}
+a.fmlink .fmltx{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:1px}
+a.fmlink .fmltx b{font-size:14.5px;font-weight:600;color:var(--ink);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+a.fmlink .fmltx span{font-size:12.5px;color:var(--ink-3);font-weight:500}
+a.fmlink .fmlgo{flex:0 0 auto;color:var(--ink-3)}
+a.fmlink:hover .fmlgo{color:var(--onfill,var(--blue))}
+a.fmlink.gone{opacity:.6;cursor:default}
+a.fmlink.gone:hover{border-color:var(--line-2);background:var(--surface-2)}
+/* 편집기 안에서는 이름만 보이는 간단한 딱지로 (꾸미면 저장 글자가 섞입니다) */
+.redit a.fmlink{display:inline-flex;margin:0 2px;padding:3px 10px;max-width:none;
+  border-radius:999px;font-size:13.5px;font-weight:600;color:var(--onfill,var(--blue));
+  background:var(--blue-soft);border-color:var(--blue-line);vertical-align:baseline}
+.redit a.fmlink::before{content:"📎 "}
+/* 양식 고르는 칸 */
+.rform[hidden]{display:none}
+.rform{border-bottom:1px solid var(--line);background:var(--surface-2)}
+.rform-hd{display:flex;align-items:center;gap:8px;padding:9px 10px;flex-wrap:wrap}
+.rform-hd b{font-size:13.5px;flex:0 0 auto}
+.rform-hd input{flex:1 1 160px;min-width:0;height:36px;padding:0 11px;font:inherit;font-size:13.5px;
+  border:1px solid var(--line-2);border-radius:9px;background:var(--surface);color:var(--ink)}
+.rform-hd input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-soft)}
+.rform-bd{max-height:260px;overflow:auto;padding:0 10px 10px;display:flex;flex-direction:column;gap:6px}
+.rfitem{display:flex;align-items:center;gap:10px;width:100%;padding:9px 10px;min-height:52px;
+  border:1px solid var(--line);border-radius:10px;background:var(--surface);cursor:pointer;
+  font:inherit;text-align:left}
+.rfitem:hover{border-color:var(--blue-line);background:var(--blue-soft)}
+.rfitem .fmic{width:34px;height:34px;border-radius:9px}
+.rfitx{flex:1 1 auto;min-width:0;display:flex;flex-direction:column}
+.rfitx b{font-size:13.5px;font-weight:600;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rfitx span{font-size:12px;color:var(--ink-3)}
+
+/* ── 관리자 목록에서 찾기 ── */
+.admfind{position:relative;margin:0 0 10px}
+.admfind .sicon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--ink-3);pointer-events:none;display:grid}
+.admfind input{width:100%;height:46px;padding:0 44px 0 42px;font:inherit;font-size:14.5px;
+  border:1px solid var(--line-2);border-radius:var(--r-sm);background:var(--surface);color:var(--ink);outline:none}
+.admfind input:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-soft)}
+.admfind input::-webkit-search-cancel-button{-webkit-appearance:none;display:none}
+.admfind button{position:absolute;right:8px;top:50%;transform:translateY(-50%);
+  width:32px;height:32px;border:0;border-radius:50%;background:transparent;color:var(--ink-3);
+  cursor:pointer;display:grid;place-items:center}
+.admfind button:hover{background:var(--surface-2);color:var(--ink)}
+.admfind button[hidden]{display:none}
+.admcnt{margin:0 0 12px;font-size:13px;color:var(--ink-2)}
+.admcnt b{color:var(--ink)}
+.admsnip{display:block;margin-top:3px;font-size:12.5px;color:var(--ink-3);line-height:1.5;font-weight:400;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:52ch}
+
 /* ══ 양식함 ══════════════════════════════════════ */
 .navlink{padding:8px 12px;border-radius:var(--r-sm);font-size:14px;color:var(--ink-2);
   text-decoration:none;font-weight:500;transition:background .15s,color .15s;
@@ -1243,6 +1305,7 @@ body.scrolled .brand .btext{display:none}
 .fmrow{position:relative;display:flex;align-items:center;gap:14px;padding:14px 16px;
   background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh)}
 .fmrow:hover{border-color:var(--blue-line)}
+.fmrow.hit{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-soft)}
 .fmic{flex:0 0 auto;width:44px;height:44px;display:grid;place-items:center;border-radius:12px;
   background:var(--surface-2);color:var(--ink-3)}
 .fmic.k-pdf{background:var(--p-rose);color:var(--p-rose-i)}
@@ -1286,7 +1349,7 @@ body.scrolled .brand .btext{display:none}
 .fmup span{margin-left:auto;font-size:12.5px;color:var(--ink-2);white-space:nowrap}
 .fmfound .sec-hd{align-items:baseline}
 .fmall{margin-left:auto;display:inline-flex;align-items:center;gap:5px;font-size:13.5px;
-  font-weight:600;color:var(--blue);text-decoration:none;white-space:nowrap;min-height:36px}
+  font-weight:600;color:var(--onfill,var(--blue));text-decoration:none;white-space:nowrap;min-height:36px}
 .fmall:hover{text-decoration:underline}
 .fmfoot{margin:26px 0 0;padding:22px;border-radius:var(--r-lg);background:var(--surface-2);
   border:1px solid var(--line);text-align:center}
@@ -4037,6 +4100,55 @@ function figs(f){
     '<img loading="lazy" src="'+IMAGES[p[0]]+'" alt="'+esc(p[1])+'"></button>'+
     '<figcaption><span>'+esc(p[1])+'</span><span class="zoom">크게 보기</span></figcaption></figure>').join('')+'</div>';
 }
+/* ── 글 안의 양식함 연결 ──────────────────────────
+   저장은  <a class="fmlink" href="#/forms/키">이름</a>  한 줄입니다.
+   화면에 그릴 때 아이콘·형식·크기를 붙이고, 누르면 그 자리에서 받습니다.
+   ─────────────────────────────────────────────── */
+function fmKeyOf(a){
+  const h=a.getAttribute('href')||'';
+  const m=h.match(/#\/forms\/([A-Za-z0-9_-]+)/);
+  return m?m[1]:'';
+}
+function bindFmLinks(root){
+  (root||document).querySelectorAll('a.fmlink:not([data-fmb])').forEach(a=>{
+    a.setAttribute('data-fmb','1');
+    const key=fmKeyOf(a);
+    const fm=FORMS.find(x=>x.key===key);
+    const label=(a.textContent||'').trim() || (fm?fm.name:'양식');
+    if(!fm){
+      a.classList.add('gone');
+      a.innerHTML='<span class="fmlic">'+formIcon('etc')+'</span>'+
+        '<span class="fmltx"><b>'+esc(label)+'</b><span>지금은 없는 양식입니다</span></span>';
+      a.addEventListener('click',e=>{ e.preventDefault(); toast('이 양식은 지워졌거나 아직 안 올라왔습니다'); });
+      return;
+    }
+    const kind=kindOf(fm.ext);
+    a.classList.add('k-'+kind);
+    a.innerHTML='<span class="fmlic">'+formIcon(kind)+'</span>'+
+      '<span class="fmltx"><b>'+esc(label)+'</b>'+
+        '<span>'+(KIND_LABEL[kind]||'파일')+' · '+sizeText(fm.size)+
+        ((kind==='pdf'||kind==='img')?' · 눌러서 보기':' · 눌러서 받기')+'</span></span>'+
+      '<span class="fmlgo">'+ic('arw',15)+'</span>';
+    a.addEventListener('click',async e=>{
+      e.preventDefault();
+      if(a.dataset.busy==='1') return;
+      a.dataset.busy='1';
+      const sub=a.querySelector('.fmltx span');
+      const was=sub?sub.textContent:'';
+      try{
+        const rec=await fetchFormFile(fm, pct=>{ if(sub) sub.textContent='받는 중 '+pct+'%'; });
+        if(kind==='pdf'||kind==='img') openViewer(fm, rec);
+        else saveAs(rec, fm.name+'.'+(fm.ext||'file'));
+        if(sub) sub.textContent=was;
+      }catch(err){
+        if(sub) sub.textContent=String(err.message||err);
+        toast(String(err.message||err));
+        setTimeout(()=>{ if(sub) sub.textContent=was; },2600);
+      }finally{ a.dataset.busy=''; }
+    });
+  });
+}
+
 function bindZoom(root){
   (root||document).querySelectorAll('.imgbox:not([data-zb])').forEach(b=>{
     b.setAttribute('data-zb','1');
@@ -4536,7 +4648,7 @@ function renderHome(){
   LAST_LIST='';
   app.innerHTML = heroHTML() + faqHTML();
   document.getElementById('mcta').innerHTML='';
-  bindHero(); bindList(); bindZoom(); bindRetry(); bindForms();
+  bindHero(); bindList(); bindZoom(); bindRetry(); bindForms(); bindFmLinks();
 }
 /* 목록만 다시 그립니다. 검색창은 건드리지 않습니다. */
 let LAST_LIST='', MINH_T=0;
@@ -4564,7 +4676,7 @@ function updateList(){
       MINH_T=setTimeout(function(){ const c=document.getElementById('faq'); if(c) c.style.minHeight=''; },1500);
     }
   }
-  bindList(); bindZoom(); bindRetry(); bindForms();
+  bindList(); bindZoom(); bindRetry(); bindForms(); bindFmLinks();
 }
 
 function noticeHTML(f){
@@ -4790,7 +4902,7 @@ function bindList(){
         const pn=card.querySelector('.panel');
         if(pn && !pn.firstChild){
           pn.innerHTML=panelHTML(f,state.q.trim());
-          bindZoom(pn);
+          bindZoom(pn); bindFmLinks(pn);
           pn.querySelectorAll('[data-cat-go]').forEach(x=>x.addEventListener('click',()=>{
             state.cat=x.dataset.catGo; state.grp=""; state.q=""; state.co=null; state.limit=PAGE;
             const s=document.getElementById('search'); if(s) s.value='';
@@ -4968,6 +5080,17 @@ function renderForms(){
   app.innerHTML=formsHTML();
   document.getElementById('mcta').innerHTML='';
   bindForms();
+  /* #/forms/키 로 들어오면 그 양식을 짚어 줍니다 (글 안의 연결을 새 탭으로 열었을 때) */
+  const m=(location.hash||'').match(/#\/forms\/([A-Za-z0-9_-]+)/);
+  if(m){
+    const row=document.querySelector('.fmrow[data-fk="'+m[1]+'"]');
+    if(row){
+      row.classList.add('hit');
+      setTimeout(()=>{ row.scrollIntoView({block:'center',
+        behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'}); },60);
+      setTimeout(()=>row.classList.remove('hit'),2600);
+    }
+  }
 }
 function updateFormList(){
   const wrap=document.querySelector('.fmwrap');
@@ -5102,7 +5225,7 @@ function renderDetail(id){
   '</div></div>';
   document.getElementById('mcta').innerHTML='';
   bindFeedback(f.id); bindRetry();
-  bindZoom(); window.scrollTo(0,0);
+  bindZoom(); bindFmLinks(); window.scrollTo(0,0);
 }
 
 /* 다시 찾기 : 칩을 누르면 그 말로 검색하고 검색창으로 데려갑니다 */
@@ -5631,7 +5754,13 @@ function inlineOf(el){
       if(tag==='br'){ s+='\n'; return; }
       if(tag==='b'||tag==='strong'){ s+='<b>'; walk(c); s+='</b>'; return; }
       if(tag==='a'){ const h=(c.getAttribute('href')||'').replace(/&(?!#?\w+;)/g,'&amp;').replace(/"/g,'&quot;');
-        const cl=c.getAttribute('class');
+        const cl=c.getAttribute('class')||'';
+        if(/\bfmlink\b/.test(cl)){        /* 양식함 연결은 새 탭으로 열지 않습니다 */
+          /* 화면용으로 꾸며진 상태라면 이름만 꺼내 씁니다 */
+          const nm=c.querySelector('.fmltx b');
+          s+='<a class="fmlink" href="'+h+'">'+escKeep(((nm||c).textContent||'').trim())+'</a>';
+          return;
+        }
         s+='<a'+(cl?' class="'+esc(cl)+'"':'')+' href="'+h+'" target="_blank" rel="noopener">';
         walk(c); s+='</a>'; return; }
       if(tag==='div'||tag==='p'){ if(s && !/\n$/.test(s)) s+='\n'; walk(c); return; }
@@ -5650,6 +5779,7 @@ function richHTML(f){
     '<div class="rtool">'+
       '<button type="button" class="rb" data-rc="bold" title="굵게"><b>B</b></button>'+
       '<button type="button" class="rb" data-rc="link" title="링크 넣기">'+ic('link',15)+'</button>'+
+      '<button type="button" class="rb" data-rc="form" title="양식함에 올린 파일 연결하기">'+ic('file',15)+' 양식</button>'+
       '<span class="rsep"></span>'+
       '<button type="button" class="rb" data-rc="lab" title="소제목으로">소제목</button>'+
       '<button type="button" class="rb" data-rc="warn" title="주의 박스로">⚠️ 주의</button>'+
@@ -5662,9 +5792,16 @@ function richHTML(f){
       '<button type="button" class="btn-b" id="rLinkOk">넣기</button>'+
       '<button type="button" class="btn-o" id="rLinkNo">취소</button>'+
     '</div>'+
+    '<div class="rform" id="rForm" hidden>'+
+      '<div class="rform-hd"><b>어떤 양식을 넣을까요?</b>'+
+        '<input id="rFormQ" type="search" placeholder="양식 이름으로 찾기" aria-label="양식 찾기">'+
+        '<button type="button" class="mini" id="rFormNo">닫기</button></div>'+
+      '<div class="rform-bd" id="rFormBd"></div>'+
+    '</div>'+
     '<div class="redit" id="faRich" contenteditable="true" spellcheck="false">'+ansToEditor(f?f.answer:'')+'</div>'+
     '<textarea id="fa" hidden>'+(f?esc(f.answer):'')+'</textarea>'+
-    '<p class="help">글을 그냥 쓰시면 됩니다. 줄을 잡고 위 단추를 누르면 <b>소제목</b>이나 <b>주의·참고 박스</b>가 됩니다.</p>'+
+    '<p class="help">글을 그냥 쓰시면 됩니다. 줄을 잡고 위 단추를 누르면 <b>소제목</b>이나 <b>주의·참고 박스</b>가 됩니다.<br>'+
+      '<b>양식</b>을 누르면 양식함에 올린 파일을 글 안에 붙일 수 있습니다. 설계사분이 글에서 바로 받아보실 수 있습니다.</p>'+
   '</div>';
 }
 
@@ -5763,6 +5900,14 @@ function bindRich(){
       savedRange=s.getRangeAt(0).cloneRange();
       lk.hidden=false; lu.value=''; lu.focus(); return;
     }
+    if(c==='form'){
+      if(!FORMS.length){ toast('먼저 위쪽 [양식함] 탭에서 파일을 올려주세요'); return; }
+      const sel=window.getSelection();
+      savedRange=(sel.rangeCount && ed.contains(sel.getRangeAt(0).startContainer))
+                 ? sel.getRangeAt(0).cloneRange() : null;
+      fq.value=''; drawForms(''); fp.hidden=false; fq.focus();
+      return;
+    }
     if(c==='html'){
       const on=ta.hidden;
       ta.hidden=!on; ed.hidden=on;
@@ -5783,6 +5928,46 @@ function bindRich(){
   document.getElementById('rLinkOk').addEventListener('click',doLink);
   document.getElementById('rLinkNo').addEventListener('click',()=>{ lk.hidden=true; ed.focus(); });
   lu.addEventListener('keydown',e=>{ if(e.key==='Enter'){ e.preventDefault(); doLink(); } });
+
+  /* ── 양식함 연결 넣기 ── */
+  const fp=document.getElementById('rForm'), fq=document.getElementById('rFormQ'),
+        fb=document.getElementById('rFormBd');
+  function drawForms(q){
+    const list=formsSorted(FORMS).filter(x=>!q || formHit(x,q));
+    fb.innerHTML = list.length
+      ? list.map(x=>'<button type="button" class="rfitem" data-fk="'+esc(x.key)+'">'+
+          '<span class="fmic k-'+kindOf(x.ext)+'">'+formIcon(kindOf(x.ext))+'</span>'+
+          '<span class="rfitx"><b>'+esc(x.name)+'</b>'+
+            '<span>'+(KIND_LABEL[kindOf(x.ext)]||'파일')+' · '+sizeText(x.size)+
+            (x.cat?' · '+esc(x.cat):'')+(x.visible===false?' · 숨김':'')+'</span></span></button>').join('')
+      : '<p class="dempty">찾는 양식이 없습니다.</p>';
+    fb.querySelectorAll('.rfitem').forEach(btn=>btn.addEventListener('click',()=>{
+      const fm=FORMS.find(x=>x.key===btn.dataset.fk); if(!fm) return;
+      insertForm(fm);
+    }));
+  }
+  function insertForm(fm){
+    const html='<a class="fmlink" href="#/forms/'+fm.key+'">'+esc(fm.name)+'</a>&nbsp;';
+    ed.focus();
+    const sel=window.getSelection();
+    if(savedRange){ sel.removeAllRanges(); sel.addRange(savedRange); }
+    else if(!sel.rangeCount || !ed.contains(sel.getRangeAt(0).startContainer)){
+      const r=document.createRange(); r.selectNodeContents(ed); r.collapse(false);
+      sel.removeAllRanges(); sel.addRange(r);
+    }
+    document.execCommand('insertHTML', false, html);
+    savedRange=null;
+    fp.hidden=true;
+    sync(); ed.focus();
+    toast('「'+fm.name+'」 을 글에 넣었습니다');
+  }
+  if(fq) fq.addEventListener('input',()=>drawForms(fq.value.trim()));
+  const fno=document.getElementById('rFormNo');
+  if(fno) fno.addEventListener('click',()=>{ fp.hidden=true; ed.focus(); });
+  if(fq) fq.addEventListener('keydown',e=>{
+    if(e.key==='Escape'){ fp.hidden=true; ed.focus(); }
+    if(e.key==='Enter'){ e.preventDefault(); const f=fb.querySelector('.rfitem'); if(f) f.click(); }
+  });
 
   /* ── 사진 ── */
   const box=document.getElementById('imgEd');
@@ -5867,17 +6052,44 @@ function editorHTML(f){
     '<button class="btn-o" id="exportBtn">파일 내려받기</button></div></div>';
 }
 
-function tableHTML(list){
-  return '<div class="panelbox"><h3>FAQ 목록</h3>'+
-    '<p class="hint">수정, 고정, 공개 여부, 순서를 여기에서 관리합니다. 다 고치셨으면 위쪽 <b>지금 게시하기</b>를 누르세요. <b>파일 내려받기</b>는 따로 백업본을 받아두실 때만 쓰시면 됩니다.</p>'+
-    '<div class="abtns" style="margin:0 0 16px"><button class="btn-b" id="newBtn">새 항목 추가</button>'+
-    '<button class="btn-o" id="exportBtn">파일 내려받기</button>'+
-'</div>'+
-    '<div class="tblwrap"><table class="tbl"><thead><tr>'+
+/* ── 관리자 목록 찾기 ────────────────────────────
+   제목·한 줄 설명·본문·분류·숨은 검색어를 모두 뒤집니다.
+   초성(ㅎㅍㅋ)과 한/영 오타(govlzhf)도 됩니다.
+   ─────────────────────────────────────────────── */
+let admQ='';
+function admHit(x, q){
+  if(!q) return true;
+  const hay=(x.question+' '+(x.summary||'')+' '+plain(x.answer||'')+' '+
+             (x.category||'')+' '+(x.sub||'')+' '+(x.grp||'')+' '+(x.tags||'')).toLowerCase();
+  const cho=chosung(hay);
+  return q.toLowerCase().split(/\s+/).filter(Boolean).every(w=>{
+    if(hay.indexOf(w)>=0) return true;
+    if(/^[ㄱ-ㅎ]+$/.test(w)) return cho.replace(/\s/g,'').indexOf(w.toUpperCase())>=0;
+    if(String(x.id)===w) return true;
+    const ko=enToKo(w);
+    return !!(ko && ko.length>=2 && hay.indexOf(ko)>=0);
+  });
+}
+/* 찾은 말이 본문 어디에 있는지 한 줄 보여줍니다 */
+function admSnip(x, q){
+  const w=q.toLowerCase().split(/\s+/).filter(Boolean)[0];
+  if(!w) return '';
+  const src=plain(x.answer||'');
+  const i=src.toLowerCase().indexOf(w);
+  if(i<0) return '';
+  const from=Math.max(0,i-24), t=src.slice(from, from+90).replace(/\s+/g,' ').trim();
+  return (from>0?'…':'')+t+(from+90<src.length?'…':'');
+}
+function admRowsHTML(list){
+  if(!list.length) return '<p class="dempty">「'+esc(admQ)+'」 로 찾은 항목이 없습니다. 다른 말로 찾아보세요.</p>';
+  return '<div class="tblwrap"><table class="tbl"><thead><tr>'+
       '<th>질문</th><th>카테고리</th><th>조회수</th><th>상태</th><th style="text-align:right">관리</th>'+
     '</tr></thead><tbody>'+
-    list.map(x=>'<tr>'+
-      '<td class="qn">'+(x.pinned?'📌 ':'')+esc(x.question)+'</td>'+
+    list.map(x=>{
+      const sn=admQ?admSnip(x,admQ):'';
+      return '<tr>'+
+      '<td class="qn">'+(x.pinned?'📌 ':'')+(admQ?hlWords2(esc(x.question),admQ):esc(x.question))+
+        (sn?'<span class="admsnip">'+hlWords2(esc(sn),admQ)+'</span>':'')+'</td>'+
       '<td class="muted">'+esc(x.category)+(x.sub?' · '+x.sub:'')+'</td>'+
       '<td class="muted">'+x.views+'</td>'+
       '<td><span class="pillst'+(x.visible?'':' off')+'">'+(x.visible?'공개':'숨김')+'</span></td>'+
@@ -5887,8 +6099,72 @@ function tableHTML(list){
         '<button class="mini" data-act="vis" data-id="'+x.id+'">'+(x.visible?'숨김':'공개')+'</button>'+
         '<button class="mini" data-act="edit" data-id="'+x.id+'">수정</button>'+
         '<button class="mini danger" data-act="del" data-id="'+x.id+'">삭제</button>'+
-      '</div></td></tr>').join('')+
-    '</tbody></table></div></div>';
+      '</div></td></tr>';}).join('')+
+    '</tbody></table></div>';
+}
+/* 찾은 말에 표시를 해줍니다 (이미 이스케이프된 글자에 씌웁니다) */
+function hlWords2(html, q){
+  let out=html;
+  q.split(/\s+/).filter(w=>w.length>=1 && !/^[ㄱ-ㅎ]+$/.test(w))
+   .sort((a,b)=>b.length-a.length)
+   .forEach(w=>{
+     const re=new RegExp('('+w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');
+     out=out.replace(/(<[^>]+>)|([^<]+)/g,(m,tag,txt)=>tag?tag:txt.replace(re,'<mark>$1</mark>'));
+   });
+  return out;
+}
+/* 어디에서 찾았는지에 따라 순서를 매깁니다. 제목에 있는 것이 맨 위로 */
+function admRank(x, q){
+  const w=q.toLowerCase().split(/\s+/).filter(Boolean);
+  const t=String(x.question||'').toLowerCase();
+  const sm=String(x.summary||'').toLowerCase();
+  const tg=String(x.tags||'').toLowerCase();
+  let r=4;
+  if(w.every(v=>t.indexOf(v)>=0)) r=0;                      /* 제목에 다 있음 */
+  else if(w.some(v=>t.indexOf(v)>=0)) r=1;                  /* 제목에 일부 */
+  else if(w.some(v=>sm.indexOf(v)>=0)) r=2;                 /* 한 줄 설명 */
+  else if(w.some(v=>tg.indexOf(v)>=0)) r=3;                 /* 숨은 검색어 */
+  return r;
+}
+function admFiltered(list){
+  const q=admQ.trim();
+  if(!q) return list;
+  const hit=list.filter(x=>admHit(x,q));
+  return hit.map((x,i)=>({x:x,r:admRank(x,q),i:i}))
+            .sort((a,b)=>(a.r-b.r)||(a.i-b.i))
+            .map(o=>o.x);
+}
+function tableHTML(list){
+  const shown=admFiltered(list);
+  return '<div class="panelbox"><h3>FAQ 목록</h3>'+
+    '<p class="hint">수정, 고정, 공개 여부, 순서를 여기에서 관리합니다. 다 고치셨으면 위쪽 <b>지금 게시하기</b>를 누르세요. <b>파일 내려받기</b>는 따로 백업본을 받아두실 때만 쓰시면 됩니다.</p>'+
+    '<div class="admfind">'+
+      '<span class="sicon">'+ic('search',18)+'</span>'+
+      '<input id="admQ" type="search" autocomplete="off" aria-label="목록에서 찾기" '+
+        'placeholder="제목·내용으로 찾기 (초성도 됩니다)" value="'+esc(admQ)+'">'+
+      '<button type="button" id="admQx" aria-label="찾기 지우기"'+(admQ?'':' hidden')+'>'+ic('x',16)+'</button>'+
+    '</div>'+
+    '<p class="admcnt" id="admCnt">'+(admQ.trim()
+      ? '<b>'+shown.length+'개</b> 찾았습니다. (전체 '+list.length+'개)'
+      : '전체 <b>'+list.length+'개</b>')+'</p>'+
+    '<div class="abtns" style="margin:0 0 16px"><button class="btn-b" id="newBtn">새 항목 추가</button>'+
+    '<button class="btn-o" id="exportBtn">파일 내려받기</button>'+
+'</div>'+
+    '<div id="admRows">'+admRowsHTML(shown)+'</div></div>';
+}
+/* 표만 다시 그립니다. 글자를 치는 동안 칸이 사라지지 않게 */
+function updateAdmTable(){
+  const box=document.getElementById('admRows');
+  if(!box){ renderAdmin(); return; }
+  const list=DATA.slice().sort((a,b)=>(b.pinned-a.pinned)||a.category.localeCompare(b.category)||a.order-b.order);
+  const shown=admFiltered(list);
+  box.innerHTML=admRowsHTML(shown);
+  const c=document.getElementById('admCnt');
+  if(c) c.innerHTML=admQ.trim()
+    ? '<b>'+shown.length+'개</b> 찾았습니다. (전체 '+list.length+'개)'
+    : '전체 <b>'+list.length+'개</b>';
+  const x=document.getElementById('admQx'); if(x) x.hidden=!admQ;
+  bindAdmActs();
 }
 
 function bindAdmin(){
@@ -6003,6 +6279,33 @@ function bindAdmin(){
   });
   app.querySelectorAll('#exportBtn').forEach(b=>b.addEventListener('click',exportFile));
   /* 사진 줄의 단추(.mini[data-im])는 여기서 다루지 않습니다 */
+  bindAdmActs();
+  const aq=document.getElementById('admQ');
+  if(aq){
+    let comp=false, t=null;
+    const fire=()=>{ clearTimeout(t); t=setTimeout(()=>{ admQ=aq.value; updateAdmTable(); },180); };
+    aq.addEventListener('compositionstart',()=>comp=true);
+    aq.addEventListener('compositionend',()=>{comp=false;fire();});
+    aq.addEventListener('input',()=>{ if(!comp) fire(); });
+    aq.addEventListener('keydown',e=>{
+      if(e.key==='Escape'){ aq.value=''; admQ=''; updateAdmTable(); }
+      if(e.key==='Enter'){
+        e.preventDefault();
+        const first=document.querySelector('#admRows [data-act="edit"]');
+        if(first) first.click();
+      }
+    });
+  }
+  const aqx=document.getElementById('admQx');
+  if(aqx) aqx.addEventListener('click',()=>{
+    admQ=''; const q=document.getElementById('admQ');
+    if(q){ q.value=''; q.focus(); }
+    updateAdmTable();
+  });
+}
+
+/* 목록 줄의 단추들. 표만 다시 그린 뒤에도 다시 걸어줍니다 */
+function bindAdmActs(){
   app.querySelectorAll('.mini[data-act]').forEach(b=>b.addEventListener('click',()=>{
     const id=+b.dataset.id, f=DATA.find(x=>x.id===id);
     switch(b.dataset.act){
@@ -6239,7 +6542,10 @@ function bumpView(id){
     const f=DATA.find(x=>x.id===id);
     if(!f || f.views===j.views) return;
     f.views=j.views;
-    if((location.hash||'').indexOf('#/admin')===0 && (admTab==='dash'||admTab==='list')) renderAdmin();
+    if((location.hash||'').indexOf('#/admin')===0){
+      if(admTab==='list') updateAdmTable();
+      else if(admTab==='dash') renderAdmin();
+    }
   });
 }
 
@@ -6449,6 +6755,7 @@ function renderPop(){
   if(popAt>=popList.length){ return false; }
   const f=popList[popAt], d=hideDaysFor(f);
   popBd.innerHTML=popCardHTML(f);
+  bindFmLinks(popBd);
   const cb=document.getElementById('popHide');
   cb.checked=false; cb.dataset.pid=f.id; cb.dataset.pdays=d;
   document.getElementById('popHideLb').textContent=d+'일 동안 안 보기';
@@ -6573,6 +6880,7 @@ function openCell(id,lab){
   document.getElementById('cellBd').innerHTML=
     (lab==='*') ? body(v,'','cell')
                 : body('<span class="flabel">'+esc(lab)+'</span>\n'+v,'','cell');
+  bindFmLinks(document.getElementById('cellBd'));
   document.getElementById('cellGo').setAttribute('href','#/faq/'+f.id);
   document.getElementById('cellCopy').setAttribute('data-copy','#cell');
   cellOv.hidden=false; requestAnimationFrame(()=>cellOv.classList.add('on'));
